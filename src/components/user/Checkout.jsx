@@ -63,7 +63,7 @@ console.log();
     };
 
     // Make a POST request to the backend to add the new address
-    axios.post('http://127.0.0.1:8000/api/add-address/', newAddressData)
+    axios.post(`${BACKEND_BASE_URL}/api/add-address/`, newAddressData)
       .then(response => {
         console.log(response.data); // Handle the response from the backend
         // Optionally update the dropdown value and clear the new address input field
@@ -91,7 +91,7 @@ console.log();
   const complete_payment = (payment_id,order_id,signature) => {
   
     axios
-    .post(`http://127.0.0.1:8000/api/complete/${decoded.user_id}/`, {
+    .post(`${BACKEND_BASE_URL}/api/complete/${decoded.user_id}/`, {
       "payment_id": payment_id,
       "order_id": order_id,
       "signature": signature,
@@ -101,7 +101,7 @@ console.log();
       
     })
       .then((response) => {
-        axios.post(`http://127.0.0.1:8000/api/bakers/orders/`, {
+        axios.post(`${BACKEND_BASE_URL}/api/bakers/orders/`, {
           user: decoded.user_id,
           product: id,  
           address: deliveryAddress,  
@@ -120,7 +120,7 @@ console.log();
   const razorpayPayment = () => {
   
     axios
-    .post(`http://127.0.0.1:8000/api/create/${decoded.user_id}/`, {
+    .post(`${BACKEND_BASE_URL}/api/create/${decoded.user_id}/`, {
       // "payment_id": payment_id,
       // "order_id": order_id,
       // "signature": signature,
