@@ -48,7 +48,7 @@ console.log("=====",user);
       }
       formDataToSend.append('user',user)
   
-      const response = await axios.post('http://localhost:8000/api/bakers/baker-application/', formDataToSend, {
+      const response = await axios.post(`${BACKEND_BASE_URL}/api/bakers/baker-application/`, formDataToSend, {
         headers: {
           'Content-Type': 'multipart/form-data', 
         },});

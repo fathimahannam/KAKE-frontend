@@ -52,7 +52,7 @@ const CakeUploadForm = () => {
       formData.append('image', cakeInfo.image);
       
   
-      const response = await axios.post('http://localhost:8000/api/bakers/cakes/', formData, {
+      const response = await axios.post(`${BACKEND_BASE_URL}/api/bakers/cakes/`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           Authorization: `Bearer ${token}`,

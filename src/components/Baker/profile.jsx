@@ -22,8 +22,8 @@ function Profile() {
   const [cakes, setCakes] = useState([]);
 
   useEffect(() => {
-    const apiUrl = `http://localhost:8000/api/bakers/show-cakes/?user_id=${userId}`;
-    const profileApiUrl = `http://localhost:8000/api/bakers/user-profiles/${userId}/`;
+    const apiUrl = `${BACKEND_BASE_URL}/api/bakers/show-cakes/?user_id=${userId}`;
+    const profileApiUrl = `${BACKEND_BASE_URL}/api/bakers/user-profiles/${userId}/`;
 
 
     const config = {
