@@ -49,7 +49,7 @@ function Login() {
         toast.success('Logged in successfully', { duration: 3000 });
 
         setTimeout(() => {
-           // Close the message
+          
           navigate('/home');
         }, 3000);
   
