@@ -42,16 +42,16 @@ function Login() {
   
       if (loginResponse) {
 
-
+        
         console.log("loginresponse === " + loginResponse);
   
         // localStorage.setItem('userJWT', loginResponse);
         toast.success('Logged in successfully', { duration: 3000 });
 
-       
+        setTimeout(() => {
            // Close the message
           navigate('/home');
-       
+        }, 3000);
   
       } else {
         toast.error('Invalid credentials', { duration: 1000 });
