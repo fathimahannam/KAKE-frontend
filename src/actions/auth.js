@@ -1,3 +1,4 @@
+import { BACKEND_BASE_URL } from "../utils/config";
 
 export default async function login(e) {
   let response = await fetch(`${BACKEND_BASE_URL}/api/login/`, {

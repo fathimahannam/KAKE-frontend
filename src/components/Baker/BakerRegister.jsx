@@ -4,7 +4,7 @@ import jwtDecode from "jwt-decode";
 import { getLocal } from '../../actions/auth'
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
-
+import { BACKEND_BASE_URL } from '../../utils/config';
 
 function BakerApplication() {
   const navigate =useNavigate()

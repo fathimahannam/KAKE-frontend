@@ -5,7 +5,7 @@ import jwtDecode from 'jwt-decode';
 import toast from 'react-hot-toast';
 import { Toaster } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
-
+import { BACKEND_BASE_URL } from '../../utils/config';
 const CakeUploadForm = () => {
   const [cakeInfo, setCakeInfo] = useState({
     cakeName: '',
