@@ -1,5 +1,5 @@
 import { BACKEND_BASE_URL } from "../utils/config";
-
+import toast from "react-hot-toast";
 export default async function login(e) {
   let response = await fetch(`${BACKEND_BASE_URL}/api/login/`, {
     method: "POST",
@@ -27,6 +27,5 @@ export default async function login(e) {
 
 export function getLocal() {
   let response = localStorage.getItem("authToken");
- 
   return response;
 }
