@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { Link } from 'react-router-dom';
+import Navbar from '../Navbar';
 
 function AdminPanel() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -10,6 +11,8 @@ function AdminPanel() {
   };
 
   return (
+    <div>
+      <Navbar/>
     <div className="min-h-screen bg-white-100 flex">
       {/* Sidebar */}
       <aside
@@ -87,6 +90,7 @@ function AdminPanel() {
 
       {/* Main Content */}
 
+    </div>
     </div>
   );
 }

@@ -8,6 +8,7 @@ import UserManagement from '../components/admin/UserManagement'
 import BakerRequest from '../components/admin/adminrequest'
 import Dashboard from '../components/admin/Dashboard'
 import Bakers from '../components/admin/BakerManagement'
+import AdminLogin from '../components/admin/AdminLogin'
 function Admin() {
   return (
     <div>
@@ -25,7 +26,8 @@ function Admin() {
           {/* <Route path ="/bakers" element={<BakerManagement/>} /> */}
           <Route path ="/bakers-request" element={<BakerRequest/>} />
           <Route path ="/bakers" element={<Bakers/>} />
-        
+          <Route path="/adminlogin" element={<AdminLogin/>} />
+
            </Routes>
       
     </div>

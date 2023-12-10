@@ -9,6 +9,7 @@ const BakerOrderListPage = () => {
   const token = getLocal('authtoken');
   const decoded = jwtDecode(token);
   const bakerId = decoded.user_id;
+  const[st,setSt] =useState(false)
 
   const [orders, setOrders] = useState([]);
   const [selectedStatus, setSelectedStatus] = useState({});
@@ -34,7 +35,7 @@ const BakerOrderListPage = () => {
 
   useEffect(() => {
     fetchOrders();
-  }, [bakerId]);
+  }, [bakerId,st]);
 
   const handleStatusChange = (orderId, newStatus) => {
     setSelectedStatus((prevSelectedStatus) => ({
@@ -42,7 +43,6 @@ const BakerOrderListPage = () => {
       [orderId]: newStatus,
     }));
   };
-  
   const handleSubmitStatus = async (orderId) => {
     try {
       console.log('Selected status:', selectedStatus);
@@ -55,7 +55,7 @@ const BakerOrderListPage = () => {
           },
         }
       );
-       
+       setSt(!st)
       console.log('Status updated successfully:', response.data);
       // You may want to refetch orders or update the state based on the response
     } catch (error) {
@@ -81,11 +81,13 @@ const BakerOrderListPage = () => {
               <div className="text-gray-500 font-semibold">Order {order.order_id} <div>
                 <div className=" text-black text-3xl">Name : {order.cake}</div>
                 <div className="text-black text-xl"> price : ₹ {order.price}</div>
-                <div className="text-black text-lg font-semibold">Status : {order.status}</div>
+                {console.log(order)}
+                <div className="text-black text-lg font-semibold">order detail: {order.status}</div>
+
                    Status:
                   <select
                     value={selectedStatus[order.order_id] || order.status}
-                    onChange={(e) => handleStatusChange(order.id, e.target.value)}
+                    onChange={(e) => handleStatusChange(order.order_id, e.target.value)}
                   >
                     <option value="Pending">Pending</option>
                     <option value="Shipped">Shipped</option>

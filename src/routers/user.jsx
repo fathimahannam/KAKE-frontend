@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Route } from 'react-router-dom'
 import { Routes } from 'react-router-dom'
 import BakerApplication from '../components/Baker/BakerRegister'
@@ -11,28 +11,48 @@ import Checkout from '../components/user/Checkout'
 import SuccessPage from '../components/user/success';
 import Chat from '../components/user/chat'
 import OrderListPage from '../components/user/OrderListPage';
-function Baker() {
-    const token = getLocal('authtoken')
+import CakeDetail from '../components/user/CakeDetail';
+import ProductDetailsPage from '../components/user/ProductDetailsPage'
+import Wishlist from '../components/user/WishlistItem';
+import Bakerz from '../components/user/Bakerprofiles';
+import Signup1 from '../components/Signup'
 
-    if(token){
-      const decoded = jwtDecode(token)
-  
-    }else{
-      
+Wishlist
+function User() {
+  const token = getLocal('authToken');
+  useEffect(() => {
+    if (token) {
+      const decoded = jwtDecode(token);
+      if (decoded.is_premium) {
+        setPremium(true);
+      }
     }
-    console.log(token);
+  }, [token]);
+
   return (
     <div>
       <Routes>
           
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/bakerhome" element={ (token!==null)? <Baker_landingpage /> : <Login />}/>
-          <Route path="/home" element={ (token!==null)? <LandingPage /> : <Login />}/>
-          <Route path="/baker-register" element={ (token!==null)? <BakerApplication /> : <Login />}/>
-          <Route path="/checkout/:id" element={ (token!==null)? <Checkout/> : <Login />}/>
-          <Route path="/success" element={ (token!==null)? <SuccessPage/> : <Login />}/>
-          <Route path="/ordelist" element={ (token!==null)? <OrderListPage/> : <Login />}/>
-          <Route path="/chat" element={ (token!==null)? <Chat/> : <Login />}/>
+          <Route path="/" element={ (token!==null)? <LandingPage /> : <Login />} />
+          <Route path="/login" element={token ?  <LandingPage /> : <Login />} />
+          <Route path="/signup" element={token ?  <LandingPage /> : <Signup1/>} /> 
+          {/* <Route path="/activate" element={<Activate1 />} /> */}
+         
+          <Route path="/home" element={ <LandingPage/>}/>
+          <Route path="/baker-register" element={  <BakerApplication /> }/>
+          <Route path="/cakedetail" element={<CakeDetail/>} />
+          <Route path="/productdetails" element={<ProductDetailsPage/>} />
+          <Route path="/wishlist" element={<Wishlist/>} />
+          <Route path="/cakedetail" element={<CakeDetail />} />
+          <Route path="/bakerprofiles/:userId" element={<Bakerz/>} />
+          <Route path="/checkout" element={<Checkout/>} />
+
+
+
+          <Route path="/checkout/:id" element={  <Checkout/>}/>
+          <Route path="/success" element={<SuccessPage/> }/>
+          <Route path="/ordelist" element={  <OrderListPage/> }/>
+          <Route path="/chat" element={ <Chat/> }/>
 
           
           
@@ -43,4 +63,4 @@ function Baker() {
   )
 }
 
-export default Baker
+export default User

@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import jwtDecode from "jwt-decode";
 import { getLocal } from '../../actions/auth';
-
+import { Link } from 'react-router-dom';
 import { BACKEND_BASE_URL } from '../../utils/config';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faPlus, faUser } from '@fortawesome/free-solid-svg-icons';
+
 const ProfilePage = () => {
   const token = getLocal('authToken');
   const decoded = jwtDecode(token);
@@ -173,6 +176,20 @@ console.log(name)
           </div>
         </div>
       )}
+            {/* Fixed Bottom Navigation */}
+            <div className="fixed bottom-0 left-0 right-0 bg-white bg-opacity-80  border-t border-gray-200">
+        <div className="container mx-auto flex justify-center items-center h-16">
+          <Link to="/baker/profile" className="text-3xl  mx-4 pr-24" title="Home">
+            <FontAwesomeIcon icon={faHome} />
+          </Link>
+          <Link to="/baker/cakedetails" className="text-3xl  mx-4" title="Add Product">
+            <FontAwesomeIcon icon={faPlus} />
+          </Link>
+          <Link to="/baker/editprofile" className="text-3xl  mx-4 pl-24" title="Profile">
+            <FontAwesomeIcon icon={faUser} />
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };

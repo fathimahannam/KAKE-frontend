@@ -52,8 +52,8 @@ console.log(id)
         navigate('/admin');
         console.log("admin")
         // toast.success('Logged in successfully', { duration: 3000 });
-      } else if (decoded.is_staff) {
-        navigate('/bakerhome');
+      } else if (decoded.is_staff === true) {
+        navigate('/baker');
         // toast.success('Logged in successfully', { duration: 3000 });
       } else {
         navigate('/home');

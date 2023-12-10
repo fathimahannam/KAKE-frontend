@@ -55,7 +55,7 @@ console.log("=====",user);
         
     
       toast.success('Form submitted successfully', { duration: 3000 });
-      navigate('/bakerhome')
+      navigate('/home')
 
   
       

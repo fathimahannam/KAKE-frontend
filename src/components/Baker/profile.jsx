@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import jwtDecode from 'jwt-decode';
 import { getLocal } from '../../actions/auth';
 import axios from 'axios';
-import { faHome, faPlus, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faPlus, faUser,faList } from '@fortawesome/free-solid-svg-icons';
 import { BACKEND_BASE_URL } from '../../utils/config';
 import EditProfile from './EditProfile'; 
 
@@ -112,13 +112,16 @@ function Profile() {
       {/* Fixed Bottom Navigation */}
       <div className="fixed bottom-0 left-0 right-0 bg-white bg-opacity-80  border-t border-gray-200">
         <div className="container mx-auto flex justify-center items-center h-16">
-          <Link to="/bakerhome" className="text-3xl  mx-4 pr-24" title="Home">
+          <Link to="/baker/profile" className="text-3xl  mx-4 pr-24" title="Home">
             <FontAwesomeIcon icon={faHome} />
           </Link>
-          <Link to="/cakedetails" className="text-3xl  mx-4" title="Add Product">
+          <Link to="/baker/cakedetails" className="text-3xl  mx-4" title="Add Product">
             <FontAwesomeIcon icon={faPlus} />
           </Link>
-          <Link to="/editprofile" className="text-3xl  mx-4 pl-24" title="Profile">
+          <Link to="/baker/order-details" className="text-3xl  mx-4 pl-24" title="Profile">
+            <FontAwesomeIcon icon={faList} />
+          </Link>
+          <Link to="/baker/editprofile" className="text-3xl  mx-4 pl-24" title="Profile">
             <FontAwesomeIcon icon={faUser} />
           </Link>
         </div>

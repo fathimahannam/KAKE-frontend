@@ -4,6 +4,7 @@ import { getLocal } from '../../actions/auth';
 import jwtDecode from 'jwt-decode';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faComment } from '@fortawesome/free-solid-svg-icons';
+import ProfilePage from './EditProfile';
 
 function BakerLandingPage() {
   const images = [
@@ -59,7 +60,10 @@ function BakerLandingPage() {
       navigate('/login')
     // })
   }  
-
+  const handleStartButtonClick = () => {
+    // Redirect to the '/profile' page
+    navigate('/baker/profile');
+  };
 
   return (
     <div className="bg-white min-h-screen text-black">
@@ -71,7 +75,7 @@ function BakerLandingPage() {
         <li>
         <button
           onClick={() => {
-            navigate('/baker-chat')
+            navigate('/baker/baker-chat')
           }}
           className=" bg-transparent text-black font-semibold hover:text-gray-500 py-2 px-4 rounded-md"
         >
@@ -109,9 +113,12 @@ function BakerLandingPage() {
   <div className="container mx-auto text-center">
     <h2 className="text-4xl font-semibold mb-4">Unlock the artistry of baking with us,Start Your Delicious Journey.</h2>
     <p className="text-lg mb-8">Indulge in the world of homemade delights crafted with love.</p>
-    <a href="/profile" className="bg-white text-rose-500 hover:bg-rose-600 text-lg font-semibold px-8 py-3 rounded-full transition duration-300">
-      Start
-    </a>
+    <button
+            onClick={handleStartButtonClick}
+            className="bg-black text-white hover:bg-white hover:text-black font-bold py-2 px-4 rounded-md shadow-lg transition duration-300 ease-in-out"
+          >
+            Start
+          </button>
   </div>
 </section>
 

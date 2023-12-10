@@ -27,7 +27,7 @@ function SignupPage() {
     const localResponse = getLocal('authToken');
     if (localResponse) {
       const decoded = jwtDecode(localResponse);
-      console.log('Decoded from setup complete ::: ', decoded);
+      // console.log('Decoded from setup complete ::: ', decoded);
       if (!decoded.is_admin === true) {
         navigate('/userhome')
       } else {
