@@ -62,7 +62,7 @@ const CakeUploadForm = () => {
       console.log('Cake uploaded successfully:', response.data);
       toast.success('successfully added ',{duration:3000})
       setTimeout(()=>{
-        navigate('/profile')
+        navigate('/baker/profile')
       },1000)
       
       setCakeInfo({
