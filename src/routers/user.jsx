@@ -15,7 +15,7 @@ import CakeDetail from '../components/user/CakeDetail';
 import ProductDetailsPage from '../components/user/ProductDetailsPage'
 import Wishlist from '../components/user/WishlistItem';
 import Bakerz from '../components/user/Bakerprofiles';
-import Signup1 from '../components/Signup'
+import Signup1 from '../pages/signup'
 
 Wishlist
 function User() {
