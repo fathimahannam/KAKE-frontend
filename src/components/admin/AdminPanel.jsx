@@ -1,18 +1,24 @@
 import React, { useState } from 'react';
 
-import { Link } from 'react-router-dom';
-import Navbar from '../Navbar';
+import { Link,useNavigate } from 'react-router-dom';
+
 
 function AdminPanel() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   };
-
+  const handleLogout=(e)=>{
+    localStorage.removeItem('authToken')
+ 
+    // setTimeout(()=>{
+      navigate('/login')
+    // })
+  } 
   return (
     <div>
-      <Navbar/>
     <div className="min-h-screen bg-white-100 flex">
       {/* Sidebar */}
       <aside
@@ -46,6 +52,9 @@ function AdminPanel() {
           >
             Bakers 
           </Link>
+          <button onClick={handleLogout} className="block bg-white hover:bg-black text-black hover:text-white px-4 py-2 rounded transition duration-300">
+            Logout
+          </button>
 
         </nav>
       </aside>
