@@ -99,7 +99,7 @@ function Bakerprofiles() {
             {cakes.map((cake, index) => (
               <div key={index} className="relative aspect-ratio-1/1 overflow-hidden rounded-lg">
                 <img
-                  src={BACKEND_BASE_URL + cake.image}
+                  src={cake.image}
                   alt={`Cake ${index + 1}`}
                   className="object-cover w-full h-full"
                   onClick={() => openModal(cake)}
