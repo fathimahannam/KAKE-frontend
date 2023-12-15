@@ -78,7 +78,7 @@ function Bakerprofiles() {
         <div className="absolute top-4 left-4 transform -translate-y-1/3 flex justify-center items-center pl-11 pt-12">
           <div className="h-32 w-32 rounded-full border-4 border-white bg-gray-300">
             <img
-              src={BACKEND_BASE_URL + profile.image}
+              src={profile.image}
               alt="Profile"
               className="h-full w-full object-cover rounded-full"
             />
