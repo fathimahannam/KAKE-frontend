@@ -162,7 +162,7 @@ console.log(id)
          
           <div key={index} className="bg-white p-3 rounded-lg shadow-md flex items-center h-12 ">
             <div className="w-11 h-11 mx-2">
-              <img src={baker.image} alt={`Baker ${index}`} className="w-11 h-11 rounded-full" />
+              <img src={BACKEND_BASE_URL + baker.image} alt={`Baker ${index}`} className="w-11 h-11 rounded-full" />
             </div>
             <div className="mr-11 text-sm flex-grow">
               <p className="text-md">{baker.name}</p>
