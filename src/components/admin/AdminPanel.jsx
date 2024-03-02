@@ -100,6 +100,7 @@ function AdminPanel() {
       {/* Main Content */}
 
     </div>
+  
     </div>
   );
 }

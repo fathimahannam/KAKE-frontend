@@ -36,7 +36,7 @@ function Login() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+    <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 bg-gradient-to-br " style={{ backgroundImage: "url('https://i.pinimg.com/736x/12/96/41/129641ca0dc9f0f4fcc9136f658f0845.jpg')" }}>
       <Toaster position="top-center" reverseOrder={false}></Toaster>
 
       <div
